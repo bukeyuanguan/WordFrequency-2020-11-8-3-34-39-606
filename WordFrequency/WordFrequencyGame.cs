@@ -28,14 +28,14 @@ namespace WordFrequency
                 //get the map for the next step of sizing the same word
                 Dictionary<string, List<Input>> map = GetListMap(inputList);
 
-                List<Input> list = new List<Input>();
+                List<Input> wordCountList = new List<Input>();
                 foreach (var entry in map)
                 {
                     Input input = new Input(entry.Key, entry.Value.Count);
-                    list.Add(input);
+                    wordCountList.Add(input);
                 }
 
-                inputList = list;
+                inputList = wordCountList;
 
                 inputList.Sort((w1, w2) => w2.WordCount - w1.WordCount);
 
