@@ -6,6 +6,7 @@ namespace WordFrequency
 {
     public class WordFrequencyGame
     {
+        private int count = 1;
         public string GetResult(string inputStr)
         {
             if (Regex.Split(inputStr, @"\s+").Length == 1)
@@ -20,7 +21,7 @@ namespace WordFrequency
                 List<Input> inputList = new List<Input>();
                 foreach (var s in arr)
                 {
-                    Input input = new Input(s, 1);
+                    Input input = new Input(s, this.count);
                     inputList.Add(input);
                 }
 
@@ -41,10 +42,10 @@ namespace WordFrequency
                 List<string> strList = new List<string>();
 
                 //stringJoiner joiner = new stringJoiner("\n");
-                foreach (Input w in inputList)
+                foreach (Input word in inputList)
                 {
-                    string s = w.Value + " " + w.WordCount;
-                    strList.Add(s);
+                    string frequency = word.Value + " " + word.WordCount;
+                    strList.Add(frequency);
                 }
 
                 return string.Join("\n", strList.ToArray());
