@@ -5,10 +5,10 @@
         private string value;
         private int count;
 
-        public Input(string w, int i)
+        public Input(string value, int count)
         {
-            this.value = w;
-            this.count = i;
+            this.value = value;
+            this.count = count;
         }
 
         public string Value
