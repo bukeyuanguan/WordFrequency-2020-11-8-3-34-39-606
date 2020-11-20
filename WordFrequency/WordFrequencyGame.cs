@@ -7,16 +7,16 @@ namespace WordFrequency
     public class WordFrequencyGame
     {
         private int count = 1;
-        public string GetResult(string inputStr)
+        public string GetResult(string sentence)
         {
-            if (Regex.Split(inputStr, @"\s+").Length == 1)
+            if (Regex.Split(sentence, @"\s+").Length == 1)
             {
-                return inputStr + " 1";
+                return sentence + " 1";
             }
             else
             {
                 //split the input string with 1 to n pieces of spaces
-                string[] arr = Regex.Split(inputStr, @"\s+");
+                string[] arr = Regex.Split(sentence, @"\s+");
 
                 List<Input> inputList = new List<Input>();
                 foreach (var s in arr)
